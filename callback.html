@@ -1,0 +1,8 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Videoplaner – Anmeldung</title><link rel="stylesheet" href="style.css"></head><body>
+<h1>Anmeldung</h1><p id="t">Einen Moment …</p><p><button id="b" style="font-size:1.2em;padding:10px 18px;display:none">Code kopieren</button></p>
+<script>
+const q=new URLSearchParams(location.search),c=q.get('code'),e=q.get('error'),t=document.getElementById('t'),b=document.getElementById('b');
+if(c){t.textContent='Anmeldung erfolgreich. Bitte den Code kopieren und per Nachricht an den Videoplaner senden.';b.style.display='inline-block';
+b.onclick=()=>{navigator.clipboard.writeText('tiktok-code '+c).then(()=>{b.textContent='Kopiert ✓'})};}
+else{t.textContent=e?('Anmeldung abgebrochen: '+e):'Keine Anmeldedaten gefunden.';}
+</script></body></html>
